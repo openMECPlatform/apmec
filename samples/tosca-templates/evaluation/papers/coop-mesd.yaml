@@ -1,0 +1,17 @@
+description: Import MEADs(already on-boarded) and NSD (already on-boarded) with input
+  parameters
+imports:
+  meads:
+    mead_templates: [mead1]
+    mec_driver: Apmec
+  nsds:
+    nfv_driver: Tacker
+    nsd_templates:
+      requirements:
+      - {name: VNF1, vnfd_template: vnfd11}
+      - {name: VNF2, vnfd_template: vnfd21}
+      - {name: VNF3, vnfd_template: vnfd31}
+topology_template:
+  node_templates:
+    MEA1: {type: tosca.nodes.mec.MEA1}
+tosca_definitions_version: tosca_simple_profile_for_mec_1_0_0

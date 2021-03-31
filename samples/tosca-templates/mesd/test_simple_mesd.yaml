@@ -1,0 +1,27 @@
+tosca_definitions_version: tosca_simple_profile_for_mec_1_0_0
+
+description: Import MEADs(already on-boarded) and NSD (already on-boarded) with input parameters
+imports:
+  meads:
+    mead_templates:
+      - mead1
+      - mead2
+    mec_driver: Apmec
+  nsds:
+    nsd_templates:
+      - nsd1
+
+    nfv_driver: Tacker
+  vnffgds:
+    vnffg_templates:
+      - vnffgd1
+    nfv_driver: Tacker
+
+topology_template:
+  node_templates:
+      MEA1:
+        type: tosca.nodes.mec.MEA1
+      MEA2:
+        type: tosca.nodes.mec.MEA2
+
+
